@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bienvenidos a Jardines de la Esperanza Camposanto. Un lugar de paz y serenidad para honrar a nuestros seres queridos.">
+    <title>Jardines de la Esperanza Camposanto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e6f0f8;
+            color: #333;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #2c3e50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3rem;
+            padding-left: 20px;
+            font-weight: 600;
+        }
+
+        header img {
+            height: 90px;
+            width: 90px;
+            border-radius: 50%;
+            border: 3px solid white;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #34495e;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            display: block;
+        }
+
+        nav a:hover {
+            background-color: #1abc9c;
+        }
+
+        .container {
+            width: 80%;
+            margin: 30px auto;
+            text-align: center;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        footer {
+            background-color: #4c6a92;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        /* Estilos para Sepultados */
+        #sepultados {
+            background: #f1f6f9;
+            padding: 40px 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        #sepultados h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        #sepultados p {
+            font-size: 1.2rem;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table th, table td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        table th {
+            background-color: #34495e;
+            color: white;
+        }
+
+        table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        table img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+        }
+
+        /* Estilos para el buscador */
+        .search-bar {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .search-bar input {
+            padding: 10px;
+            font-size: 1.2rem;
+            width: 50%;
+            border: 2px solid #34495e;
+            border-radius: 4px;
+        }
+
+        .search-bar button {
+            padding: 10px 20px;
+            background-color: #1abc9c;
+            color: white;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .search-bar button:hover {
+            background-color: #16a085;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <img src="imagen/logo.jpg" alt="Logo de Jardines de la Esperanza">
+        <h1>Jardines de la Esperanza Camposanto</h1>
+    </header>
+
+    <!-- Menú de navegación -->
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="sepultados.html">Sepultados</a>
+        <a href="funeraria.html">Funeraria</a>
+        <a href="obituario.html">Obituarios</a>
+        <a href="contactos.html">Contacto</a>
+    </nav>
+
+    <div class="container">
+        <!-- Sección de Sepultados -->
+        <section id="sepultados" class="section">
+            <h2>Sepultados en Jardines de la Esperanza</h2>
+            <p>Honramos la memoria de aquellos que descansan en paz en nuestro camposanto. Cada sepultura es un recordatorio de amor, respeto y vida eterna.</p>
+
+            <!-- Barra de búsqueda -->
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Buscar por nombre..." onkeyup="filterObituaries()">
+                <button onclick="filterObituaries()">Buscar</button>
+            </div>
+
+            <!-- Tabla de sepultados -->
+            <table id="obituariesTable">
+                <thead>
+                    <tr>
+                        <th>Foto</th>
+                        <th>Nombre</th>
+                        <th>Fecha de Nacimiento</th>
+                        <th>Fecha de Fallecimiento</th>
+                        <th>Mensaje</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="imagen/img-s2.jpg" alt="Juan Pérez"></td>
+                        <td>Juan Pérez</td>
+                        <td>12 de marzo de 1960</td>
+                        <td>15 de junio de 2022</td>
+                        <td>Un hombre de familia, dedicado y amable. Siempre en nuestros corazones.</td>
+                    </tr>
+                    <tr>
+                        <td><img src="imagen/img-s.jpg" alt="María Gómez"></td>
+                        <td>María Gómez</td>
+                        <td>8 de enero de 1975</td>
+                        <td>2 de noviembre de 2020</td>
+                        <td>Madre, abuela y amiga. Siempre serás recordada con amor.</td>
+                    </tr>
+                    <tr>
+                        <td><img src="imagen/img-s2.jpg" alt="Carlos Sánchez"></td>
+                        <td>Carlos Sánchez</td>
+                        <td>5 de agosto de 1952</td>
+                        <td>25 de febrero de 2019</td>
+                        <td>Gran hombre, lleno de sabiduría y amor por su familia. Nos deja un legado invaluable.</td>
+                    </tr>
+                    <tr>
+                        <td><img src="imagen/img-s.jpg" alt="Lucía Martínez"></td>
+                        <td>Lucía Martínez</td>
+                        <td>22 de diciembre de 1980</td>
+                        <td>18 de mayo de 2021</td>
+                        <td>Amiga y hermana querida, tu ausencia se siente profundamente, pero tu amor siempre estará presente.</td>
+                    </tr>
+                    <tr>
+                        <td><img src="imagen/img-s2.jpg" alt="José Gómez"></td>
+                        <td>José Gómez</td>
+                        <td>1 de febrero de 1930</td>
+                        <td>30 de septiembre de 2018</td>
+                        <td>Un hombre sabio y lleno de bondad. Siempre recordaremos tu alegría y tu fortaleza.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Jardines de la Esperanza Camposanto. Todos los derechos reservados.</p>
+        <p>
+            <a href="#">Política de privacidad</a> | <a href="#">Términos de uso</a>
+        </p>
+    </footer>
+
+    <script>
+        function filterObituaries() {
+            const searchInput = document.getElementById('searchInput').value.toLowerCase();
+            const table = document.getElementById('obituariesTable');
+            const rows = table.getElementsByTagName('tr');
+
+            for (let i = 1; i < rows.length; i++) { // Start from 1 to skip the header
+                let cells = rows[i].getElementsByTagName('td');
+                let nameCell = cells[1].textContent.toLowerCase();
+                
+                // Check if the name matches the search term
+                if (nameCell.includes(searchInput)) {
+                    rows[i].style.display = '';
+                } else {
+                    rows[i].style.display = 'none';
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>
